@@ -1,0 +1,48 @@
+preprocessing:
+  cian_path: ../data/cian.csv
+  cian_clean_path: ../data/cian_clean.csv
+  cian_full_path: ../data/cian_full.csv
+  metro_path: ../data/metro.json
+  address_path: ../data/address.json
+  lon_center: 37.621031
+  lat_center: 55.753595
+  API_key: df6b0204-4bd5-42a4-af8a-5c128c3c9834
+  man_speed: 0.083
+  train_path_proc: ../data/processed/train.csv
+  test_path_proc: ../data/processed/test.csv
+  train_val_path_proc: ../data/processed/train_.csv
+  val_path_proc: ../data/processed/val.csv
+  test_size: 0.2
+  test_size_val: 0.16
+  random_state: 26
+
+
+train:
+  drop_columns: ['Adres', 'Metro', 'shirota_metro', 'dolgota_metro']
+  drop_columns_unique: ["Цена", "Цена за квадрат"]
+  target_column: Tsena_za_kvadrat_log
+  test_size: 0.2
+  n_trials: 30
+  n_folds: 5
+  random_state: 26
+  metrics_path: ../report/metrics.json
+  metrics_cross_path: ../report/metrics_cross.json
+  params_path: ../report/best_params.json
+  study_path: ../models/study.joblib
+  model_path: ../models/model_lgb.joblib
+  unique_values_path: ../data/processed/unique_values.json
+
+evaluate:
+  predict_path: ../data/check/cian_test.csv
+endpoints:
+#  train: 'http://fastapi:8000/train'
+#  prediction_input: 'http://fastapi:8000/predict_input'
+#  prediction_from_file: 'http://fastapi:8000/predict'
+#  training_top: 'http://fastapi:8000/train_top_params'
+#  cross_training: 'http://fastapi:8000/cross_training'
+
+  train: 'http://localhost:8000/train'
+  prediction_from_file: 'http://localhost:8000/predict'
+  prediction_input: 'http://localhost:8000/predict_input'
+  training_top: 'http://localhost:8000/train_top_params'
+  cross_training: 'http://localhost:8000/cross_training'

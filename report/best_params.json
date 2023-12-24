@@ -1,0 +1,1 @@
+{"metric": "rmse", "random_state": 26, "n_estimators": 1000, "reg_alpha": 0.01114899613219469, "reg_lambda": 0.16036770524425534, "colsample_bytree": 0.9, "subsample": 1.0, "learning_rate": 0.017, "max_depth": 10, "num_leaves": 868, "min_child_samples": 1}
