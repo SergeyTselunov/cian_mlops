@@ -177,6 +177,6 @@ def evaluate_from_file(data: pd.DataFrame, endpoint: object, files: BytesIO):
         data_["Цена за квадрат(Предсказание)"] = output.json()["prediction"]
         st.write(
             data_.head().style.format(
-                {"Цена за квадрат(Предсказание)": "{:.3f}млн"}, precision=0
+                {"Цена за квадрат(Предсказание)": "{:.0f}"}, precision=0
             )
         )
