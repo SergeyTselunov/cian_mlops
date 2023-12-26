@@ -21,7 +21,7 @@ app = FastAPI()
 CONFIG_PATH = "../config/params.yml"
 
 
-class InsuranceCustomer(BaseModel):
+class ApartmentMoscow(BaseModel):
     """
     Признаки для получения результатов модели
     """
@@ -94,35 +94,35 @@ def prediction(file: UploadFile = File(...)):
 
 
 @app.post("/predict_input")
-def prediction_input(customer: InsuranceCustomer):
+def prediction_input(apartment: ApartmentMoscow):
     """
     Предсказание модели по введенным данным
     """
     features = [
         [
-            customer.Address,
-            customer.Metro,
-            customer.Vremja_do_metro,
-            customer.Obschaja_ploschad,
-            customer.Zhilaja_ploschad,
-            customer.Ploschad_kuhni,
-            customer.Etazh,
-            customer.God_postrojki,
-            customer.Tip_zhilja,
-            customer.Vysota_potolkov,
-            customer.Sanuzel,
-            customer.Vid_iz_okon,
-            customer.Remont,
-            customer.Musoroprovod,
-            customer.Kolichestvo_liftov,
-            customer.Tip_doma,
-            customer.Tip_perekrytij,
-            customer.Parkovka,
-            customer.Otoplenie,
-            customer.Balkonlodzhija,
-            customer.Otdelka,
-            customer.Etazhnost_zdanija,
-            customer.Kolvo_komnat,
+            apartment.Address,
+            apartment.Metro,
+            apartment.Vremja_do_metro,
+            apartment.Obschaja_ploschad,
+            apartment.Zhilaja_ploschad,
+            apartment.Ploschad_kuhni,
+            apartment.Etazh,
+            apartment.God_postrojki,
+            apartment.Tip_zhilja,
+            apartment.Vysota_potolkov,
+            apartment.Sanuzel,
+            apartment.Vid_iz_okon,
+            apartment.Remont,
+            apartment.Musoroprovod,
+            apartment.Kolichestvo_liftov,
+            apartment.Tip_doma,
+            apartment.Tip_perekrytij,
+            apartment.Parkovka,
+            apartment.Otoplenie,
+            apartment.Balkonlodzhija,
+            apartment.Otdelka,
+            apartment.Etazhnost_zdanija,
+            apartment.Kolvo_komnat,
         ]
     ]
 
